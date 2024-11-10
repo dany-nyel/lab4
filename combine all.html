@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combined HTML</title>
+</head>
+<body>
+    <h1>Change Content</h1>
+    <div id="myElement">
+        <p id="myParagraph">Welcome to my website!</p>
+    </div>
+    <button onclick="changeContent()">Click me to change text</button>
+
+    <h1>Number Validation</h1>
+    <input type="text" id="userInput" placeholder="Enter a number">
+    <button onclick="checkInput()">Check</button>
+
+    <h1>Loop Number</h1>
+    <p id="demo"></p>
+
+    <script>
+        function changeContent() {
+            document.getElementById("myParagraph").textContent = "Hello there!";
+        }
+
+        function checkInput() {
+            const userInput = document.getElementById("userInput").value;
+
+            if (userInput.trim() === "") {
+                alert("Please insert a number!");
+            } else {
+                if (isNaN(userInput)) {
+                    alert("Please insert a number!");
+                } else {
+                    const number = parseFloat(userInput);
+
+                    if (number < 10) {
+                        alert("The number is lower than 10");
+                    } else {
+                        alert("The number is higher than 10");
+                    }
+                }
+            }
+        }
+
+        let text = "";
+        for (let i = 1; i <= 5; i++) {
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>
